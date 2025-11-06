@@ -3,6 +3,9 @@ package algorithms.assignment.graph;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * Represents a vertex in a directed graph with generic data type.
+ */
 public final class Vertex<T> {
     private final T data;
     private boolean visited;
@@ -31,4 +34,23 @@ public final class Vertex<T> {
     public T getData() {
         return data;
     }
+
+    @Override
+    public String toString() {
+        return "Vertex(" + data + ")";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Vertex<?> vertex = (Vertex<?>) o;
+        return data != null ? data.equals(vertex.data) : vertex.data == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return data != null ? data.hashCode() : 0;
+    }
 }
+

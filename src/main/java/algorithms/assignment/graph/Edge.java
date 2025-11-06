@@ -1,11 +1,19 @@
 package algorithms.assignment.graph;
 
-public final class Edge {
+/**
+ * Represents a directed edge in a graph with weight and inclusion flag.
+ */
+public class Edge {
     private final int weight;
     private boolean included;
 
+    public Edge() {
+        this(1);
+    }
+
     public Edge(int weight) {
         this.weight = weight;
+        this.included = false;
     }
 
     public int getWeight() {
@@ -19,4 +27,10 @@ public final class Edge {
     public void setIncluded(boolean included) {
         this.included = included;
     }
+
+    @Override
+    public String toString() {
+        return "Edge(w=" + weight + ")";
+    }
 }
+
