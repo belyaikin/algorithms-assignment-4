@@ -1,4 +1,4 @@
-package algorithms.assignment.graph.topo;
+package algorithms.assignment.graph.topological_sort.result;
 
 import algorithms.assignment.Metrics;
 

@@ -1,7 +1,9 @@
-package algorithms.assignment.graph.topo;
+package algorithms.assignment.graph.topological_sort;
 
 import algorithms.assignment.graph.Graph;
 import algorithms.assignment.graph.Vertex;
+import algorithms.assignment.graph.topological_sort.result.TopologicalSortMetrics;
+import algorithms.assignment.graph.topological_sort.result.TopologicalSortResult;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

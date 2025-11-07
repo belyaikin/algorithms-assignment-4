@@ -2,9 +2,9 @@ package algorithms.assignment;
 
 import algorithms.assignment.graph.Graph;
 import algorithms.assignment.graph.Vertex;
-import algorithms.assignment.graph.topo.DFSTopologicalSort;
-import algorithms.assignment.graph.topo.KahnTopologicalSort;
-import algorithms.assignment.graph.topo.TopologicalSortResult;
+import algorithms.assignment.graph.topological_sort.DFSTopologicalSort;
+import algorithms.assignment.graph.topological_sort.KahnTopologicalSort;
+import algorithms.assignment.graph.topological_sort.result.TopologicalSortResult;
 
 /**
  * Main class demonstrating topological sort on a DAG.
