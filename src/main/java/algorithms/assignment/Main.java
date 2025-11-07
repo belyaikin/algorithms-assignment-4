@@ -23,15 +23,15 @@ public class Main {
         TopologicalSortResult<String> kahnResult = kahn.sort(dag);
 
         if (!kahnResult.hasCycle()) {
-            System.out.println("Topological Order: " + kahnResult.getOrder());
+            System.out.println("Topological Order: " + kahnResult.order());
             System.out.println("\nOrder of tasks:");
-            for (String task : kahnResult.getOrder()) {
+            for (String task : kahnResult.order()) {
                 System.out.println("  " + task);
             }
         } else {
             System.out.println("Cycle detected! Graph is not a DAG.");
         }
-        System.out.println("\n" + kahnResult.getMetrics().getSummary());
+        System.out.println("\n" + kahnResult.metrics().getSummary());
 
         // Test DFS algorithm
         System.out.println("\n--- DFS-based Algorithm ---");
@@ -39,15 +39,15 @@ public class Main {
         TopologicalSortResult<String> dfsResult = dfs.sort(dag);
 
         if (!dfsResult.hasCycle()) {
-            System.out.println("Topological Order: " + dfsResult.getOrder());
+            System.out.println("Topological Order: " + dfsResult.order());
             System.out.println("\nOrder of tasks:");
-            for (String task : dfsResult.getOrder()) {
+            for (String task : dfsResult.order()) {
                 System.out.println("  " + task);
             }
         } else {
             System.out.println("Cycle detected! Graph is not a DAG.");
         }
-        System.out.println("\n" + dfsResult.getMetrics().getSummary());
+        System.out.println("\n" + dfsResult.metrics().getSummary());
 
         // Test with a graph containing a cycle
         System.out.println("\n\n=== Cycle Detection Test ===\n");

@@ -5,28 +5,24 @@ import java.util.List;
 /**
  * Result of a topological sort operation.
  */
-public class TopologicalSortResult<T> {
-    private final List<T> order;
-    private final boolean hasCycle;
-    private final TopologicalSortMetrics metrics;
-
-    public TopologicalSortResult(List<T> order, boolean hasCycle, TopologicalSortMetrics metrics) {
-        this.order = order;
-        this.hasCycle = hasCycle;
-        this.metrics = metrics;
-    }
-
+public record TopologicalSortResult<T>(
+        List<T> order,
+        boolean hasCycle,
+        TopologicalSortMetrics metrics
+) {
     /**
      * Gets the topological order of vertices (or components).
      * Empty if the graph has a cycle.
      */
-    public List<T> getOrder() {
+    @Override
+    public List<T> order() {
         return order;
     }
 
     /**
      * Returns true if a cycle was detected (graph is not a DAG).
      */
+    @Override
     public boolean hasCycle() {
         return hasCycle;
     }
@@ -34,7 +30,8 @@ public class TopologicalSortResult<T> {
     /**
      * Gets the metrics collected during the sort.
      */
-    public TopologicalSortMetrics getMetrics() {
+    @Override
+    public TopologicalSortMetrics metrics() {
         return metrics;
     }
 

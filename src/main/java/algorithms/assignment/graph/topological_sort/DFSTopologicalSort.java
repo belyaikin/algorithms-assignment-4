@@ -17,7 +17,7 @@ import java.util.*;
  * 3. Reverse the result to get topological order
  * 4. Detect cycles using a recursive stack
  */
-public class DFSTopologicalSort<T> {
+public final class DFSTopologicalSort<T> {
     private final TopologicalSortMetrics metrics;
     private Set<Vertex<T>> visited;
     private Set<Vertex<T>> recursionStack;

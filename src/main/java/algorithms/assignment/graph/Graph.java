@@ -6,7 +6,7 @@ import java.util.*;
  * Directed graph implementation using adjacency list representation.
  * Uses generic Vertex type.
  */
-public class Graph<T> {
+public final class Graph<T> {
     private final Map<T, Vertex<T>> vertices;
 
     public Graph() {

@@ -20,7 +20,7 @@ import java.util.*;
  *    - If in-degree becomes 0, add to queue
  * 4. If all vertices processed, graph is a DAG; otherwise, cycle detected
  */
-public class KahnTopologicalSort<T> {
+public final class KahnTopologicalSort<T> {
     private final TopologicalSortMetrics metrics;
 
     public KahnTopologicalSort() {

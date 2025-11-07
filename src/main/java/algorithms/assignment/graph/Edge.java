@@ -3,7 +3,7 @@ package algorithms.assignment.graph;
 /**
  * Represents a directed edge in a graph with weight and inclusion flag.
  */
-public class Edge {
+public final class Edge {
     private final int weight;
     private boolean included;
 

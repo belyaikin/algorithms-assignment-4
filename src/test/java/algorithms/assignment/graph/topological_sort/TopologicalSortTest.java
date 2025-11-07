@@ -37,16 +37,16 @@ public class TopologicalSortTest {
         // Test Kahn's algorithm
         TopologicalSortResult<Integer> kahnResult = kahn.sort(graph);
         assertFalse(kahnResult.hasCycle());
-        assertEquals(3, kahnResult.getOrder().size());
-        List<Integer> kahnOrder = kahnResult.getOrder();
+        assertEquals(3, kahnResult.order().size());
+        List<Integer> kahnOrder = kahnResult.order();
         assertTrue(kahnOrder.indexOf(0) < kahnOrder.indexOf(1));
         assertTrue(kahnOrder.indexOf(1) < kahnOrder.indexOf(2));
 
         // Test DFS algorithm
         TopologicalSortResult<Integer> dfsResult = dfs.sort(graph);
         assertFalse(dfsResult.hasCycle());
-        assertEquals(3, dfsResult.getOrder().size());
-        List<Integer> dfsOrder = dfsResult.getOrder();
+        assertEquals(3, dfsResult.order().size());
+        List<Integer> dfsOrder = dfsResult.order();
         assertTrue(dfsOrder.indexOf(0) < dfsOrder.indexOf(1));
         assertTrue(dfsOrder.indexOf(1) < dfsOrder.indexOf(2));
     }
@@ -66,8 +66,8 @@ public class TopologicalSortTest {
         // Test Kahn's algorithm
         TopologicalSortResult<Integer> kahnResult = kahn.sort(graph);
         assertFalse(kahnResult.hasCycle());
-        assertEquals(4, kahnResult.getOrder().size());
-        List<Integer> kahnOrder = kahnResult.getOrder();
+        assertEquals(4, kahnResult.order().size());
+        List<Integer> kahnOrder = kahnResult.order();
         assertTrue(kahnOrder.indexOf(0) < kahnOrder.indexOf(1));
         assertTrue(kahnOrder.indexOf(0) < kahnOrder.indexOf(2));
         assertTrue(kahnOrder.indexOf(1) < kahnOrder.indexOf(3));
@@ -76,8 +76,8 @@ public class TopologicalSortTest {
         // Test DFS algorithm
         TopologicalSortResult<Integer> dfsResult = dfs.sort(graph);
         assertFalse(dfsResult.hasCycle());
-        assertEquals(4, dfsResult.getOrder().size());
-        List<Integer> dfsOrder = dfsResult.getOrder();
+        assertEquals(4, dfsResult.order().size());
+        List<Integer> dfsOrder = dfsResult.order();
         assertTrue(dfsOrder.indexOf(0) < dfsOrder.indexOf(1));
         assertTrue(dfsOrder.indexOf(0) < dfsOrder.indexOf(2));
         assertTrue(dfsOrder.indexOf(1) < dfsOrder.indexOf(3));
@@ -97,12 +97,12 @@ public class TopologicalSortTest {
         // Test Kahn's algorithm
         TopologicalSortResult<Integer> kahnResult = kahn.sort(graph);
         assertFalse(kahnResult.hasCycle());
-        assertEquals(4, kahnResult.getOrder().size());
+        assertEquals(4, kahnResult.order().size());
 
         // Test DFS algorithm
         TopologicalSortResult<Integer> dfsResult = dfs.sort(graph);
         assertFalse(dfsResult.hasCycle());
-        assertEquals(4, dfsResult.getOrder().size());
+        assertEquals(4, dfsResult.order().size());
     }
 
     @Test
@@ -119,12 +119,12 @@ public class TopologicalSortTest {
         // Test Kahn's algorithm
         TopologicalSortResult<Integer> kahnResult = kahn.sort(graph);
         assertTrue(kahnResult.hasCycle());
-        assertTrue(kahnResult.getOrder().isEmpty());
+        assertTrue(kahnResult.order().isEmpty());
 
         // Test DFS algorithm
         TopologicalSortResult<Integer> dfsResult = dfs.sort(graph);
         assertTrue(dfsResult.hasCycle());
-        assertTrue(dfsResult.getOrder().isEmpty());
+        assertTrue(dfsResult.order().isEmpty());
     }
 
     @Test
@@ -152,14 +152,14 @@ public class TopologicalSortTest {
         // Test Kahn's algorithm
         TopologicalSortResult<Integer> kahnResult = kahn.sort(graph);
         assertFalse(kahnResult.hasCycle());
-        assertEquals(1, kahnResult.getOrder().size());
-        assertEquals(0, kahnResult.getOrder().get(0));
+        assertEquals(1, kahnResult.order().size());
+        assertEquals(0, kahnResult.order().get(0));
 
         // Test DFS algorithm
         TopologicalSortResult<Integer> dfsResult = dfs.sort(graph);
         assertFalse(dfsResult.hasCycle());
-        assertEquals(1, dfsResult.getOrder().size());
-        assertEquals(0, dfsResult.getOrder().get(0));
+        assertEquals(1, dfsResult.order().size());
+        assertEquals(0, dfsResult.order().get(0));
     }
 
     @Test
@@ -179,10 +179,10 @@ public class TopologicalSortTest {
         // Test Kahn's algorithm
         TopologicalSortResult<Integer> kahnResult = kahn.sort(graph);
         assertFalse(kahnResult.hasCycle());
-        assertEquals(6, kahnResult.getOrder().size());
+        assertEquals(6, kahnResult.order().size());
 
         // Verify partial order is maintained
-        List<Integer> kahnOrder = kahnResult.getOrder();
+        List<Integer> kahnOrder = kahnResult.order();
         assertTrue(kahnOrder.indexOf(5) < kahnOrder.indexOf(2));
         assertTrue(kahnOrder.indexOf(5) < kahnOrder.indexOf(0));
         assertTrue(kahnOrder.indexOf(4) < kahnOrder.indexOf(0));
@@ -193,10 +193,10 @@ public class TopologicalSortTest {
         // Test DFS algorithm
         TopologicalSortResult<Integer> dfsResult = dfs.sort(graph);
         assertFalse(dfsResult.hasCycle());
-        assertEquals(6, dfsResult.getOrder().size());
+        assertEquals(6, dfsResult.order().size());
 
         // Verify partial order is maintained
-        List<Integer> dfsOrder = dfsResult.getOrder();
+        List<Integer> dfsOrder = dfsResult.order();
         assertTrue(dfsOrder.indexOf(5) < dfsOrder.indexOf(2));
         assertTrue(dfsOrder.indexOf(5) < dfsOrder.indexOf(0));
         assertTrue(dfsOrder.indexOf(4) < dfsOrder.indexOf(0));
@@ -217,13 +217,13 @@ public class TopologicalSortTest {
 
         // Test Kahn metrics
         TopologicalSortResult<Integer> kahnResult = kahn.sort(graph);
-        TopologicalSortMetrics kahnMetrics = kahnResult.getMetrics();
+        TopologicalSortMetrics kahnMetrics = kahnResult.metrics();
         assertTrue(kahnMetrics.getElapsedTimeNanos() > 0);
         assertTrue(kahnMetrics.getCounter("vertices_processed") > 0);
 
         // Test DFS metrics
         TopologicalSortResult<Integer> dfsResult = dfs.sort(graph);
-        TopologicalSortMetrics dfsMetrics = dfsResult.getMetrics();
+        TopologicalSortMetrics dfsMetrics = dfsResult.metrics();
         assertTrue(dfsMetrics.getElapsedTimeNanos() > 0);
         assertTrue(dfsMetrics.getCounter("vertices_visited") > 0);
     }

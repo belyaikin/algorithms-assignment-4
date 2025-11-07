@@ -8,7 +8,7 @@ import java.util.Map;
 /**
  * Implementation of the Metrics interface for topological sort algorithms.
  */
-public class TopologicalSortMetrics implements Metrics {
+public final class TopologicalSortMetrics implements Metrics {
     private long startTime;
     private long endTime;
     private final Map<String, Long> counters;
