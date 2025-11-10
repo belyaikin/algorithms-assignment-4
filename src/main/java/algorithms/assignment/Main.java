@@ -1,5 +1,7 @@
 package algorithms.assignment;
 
+import algorithms.assignment.dag_paths.DAGPathFinder;
+import algorithms.assignment.dag_paths.result.DAGPathResult;
 import algorithms.assignment.graph.Graph;
 import algorithms.assignment.graph.Vertex;
 import algorithms.assignment.strongly_connected_components.KosarajuSCC;
@@ -34,6 +36,36 @@ public class Main {
         }
 
         System.out.println("\n" + tarjanResult.metrics().getSummary());
+
+        System.out.println("\n=== DAG Path Algorithms ===");
+        DAGPathFinder<String> pathFinder = new DAGPathFinder<>();
+
+        Graph<String> dag = createDAG();
+
+        DAGPathResult<String> shortest = pathFinder.shortestPaths(dag, "Planning");
+        System.out.println("Shortest Distances from Planning:");
+        System.out.println(shortest);
+
+        DAGPathResult<String> longest = pathFinder.longestPaths(dag, "Planning");
+        System.out.println("Critical Path (Longest):");
+        System.out.println(longest);
+    }
+
+    private static Graph<String> createDAG() {
+        Graph<String> dag = new Graph<>();
+
+        dag.addVertex(new Vertex<>("Planning"));
+        dag.addVertex(new Vertex<>("Design"));
+        dag.addVertex(new Vertex<>("Implementation"));
+        dag.addVertex(new Vertex<>("Testing"));
+        dag.addVertex(new Vertex<>("Deployment"));
+
+        dag.addEdge("Planning", "Design", 2);
+        dag.addEdge("Design", "Implementation", 4);
+        dag.addEdge("Implementation", "Testing", 3);
+        dag.addEdge("Testing", "Deployment", 1);
+
+        return dag;
     }
 
     private static Graph<String> createSCCGraph() {
