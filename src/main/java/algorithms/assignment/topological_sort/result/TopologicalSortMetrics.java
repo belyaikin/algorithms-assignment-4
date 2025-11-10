@@ -1,16 +1,19 @@
-package algorithms.assignment.graph.strongly_connected_components.result;
+package algorithms.assignment.topological_sort.result;
 
 import algorithms.assignment.Metrics;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public final class SCCMetrics implements Metrics {
+/**
+ * Implementation of the Metrics interface for topological sort algorithms.
+ */
+public final class TopologicalSortMetrics implements Metrics {
     private long startTime;
     private long endTime;
     private final Map<String, Long> counters;
 
-    public SCCMetrics() {
+    public TopologicalSortMetrics() {
         this.counters = new HashMap<>();
         reset();
     }
@@ -31,13 +34,13 @@ public final class SCCMetrics implements Metrics {
     }
 
     @Override
-    public void incrementCounter(String name) {
-        counters.put(name, counters.getOrDefault(name, 0L) + 1);
+    public void incrementCounter(String counterName) {
+        counters.put(counterName, counters.getOrDefault(counterName, 0L) + 1);
     }
 
     @Override
-    public long getCounter(String name) {
-        return counters.getOrDefault(name, 0L);
+    public long getCounter(String counterName) {
+        return counters.getOrDefault(counterName, 0L);
     }
 
     @Override
@@ -50,7 +53,7 @@ public final class SCCMetrics implements Metrics {
     @Override
     public String getSummary() {
         StringBuilder sb = new StringBuilder();
-        sb.append("SCC Metrics:\n");
+        sb.append("Topological Sort Metrics:\n");
         sb.append(String.format("  Time: %.3f ms\n", getElapsedTimeMillis()));
 
         for (Map.Entry<String, Long> entry : counters.entrySet()) {

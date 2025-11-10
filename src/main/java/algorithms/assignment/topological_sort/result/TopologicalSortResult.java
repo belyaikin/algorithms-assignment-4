@@ -1,4 +1,4 @@
-package algorithms.assignment.graph.topological_sort.result;
+package algorithms.assignment.topological_sort.result;
 
 import java.util.List;
 

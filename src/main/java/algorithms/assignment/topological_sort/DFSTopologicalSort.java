@@ -1,10 +1,10 @@
-package algorithms.assignment.graph.topological_sort;
+package algorithms.assignment.topological_sort;
 
 import algorithms.assignment.graph.Graph;
 import algorithms.assignment.graph.Neighbor;
 import algorithms.assignment.graph.Vertex;
-import algorithms.assignment.graph.topological_sort.result.TopologicalSortMetrics;
-import algorithms.assignment.graph.topological_sort.result.TopologicalSortResult;
+import algorithms.assignment.topological_sort.result.TopologicalSortMetrics;
+import algorithms.assignment.topological_sort.result.TopologicalSortResult;
 
 import java.util.*;
 

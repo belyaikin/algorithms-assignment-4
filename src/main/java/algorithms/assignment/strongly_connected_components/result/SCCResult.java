@@ -1,4 +1,4 @@
-package algorithms.assignment.graph.strongly_connected_components.result;
+package algorithms.assignment.strongly_connected_components.result;
 
 import algorithms.assignment.graph.Vertex;
 

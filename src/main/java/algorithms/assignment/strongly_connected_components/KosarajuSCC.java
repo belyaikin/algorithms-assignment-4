@@ -1,10 +1,10 @@
-package algorithms.assignment.graph.strongly_connected_components;
+package algorithms.assignment.strongly_connected_components;
 
 import algorithms.assignment.graph.Graph;
 import algorithms.assignment.graph.Vertex;
 import algorithms.assignment.graph.Neighbor;
-import algorithms.assignment.graph.strongly_connected_components.result.SCCMetrics;
-import algorithms.assignment.graph.strongly_connected_components.result.SCCResult;
+import algorithms.assignment.strongly_connected_components.result.SCCMetrics;
+import algorithms.assignment.strongly_connected_components.result.SCCResult;
 
 import java.util.*;
 
