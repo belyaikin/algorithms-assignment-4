@@ -43,7 +43,31 @@ The solution is compartmentalized into distinct packages, ensuring high code qua
 ## 📂 Repository Structure
 
 The project uses a standard Maven structure (`pom.xml` included).
-/ ├── src/ │ ├── main/java/algorithms/assignment/ │ │ ├── dag_paths/ # DAGPathFinder.java │ │ ├── graph/ # Core Graph, Vertex, Edge, Neighbor classes │ │ ├── strongly_connected_components/ # KosarajuSCC.java, TarjanSCC.java │ │ ├── topological_sort/ # DFSTopologicalSort.java, KahnTopologicalSort.java │ │ ├── Main.java # Main Execution Logic │ │ └── Metrics.java # Instrumentation Class ├── test/ # JUnit Test Cases ├── data/ # Placeholder for Input Datasets ├── pom.xml # Maven Configuration └── README.md # This document
+
+/
+├── src/
+
+│   ├── main/java/algorithms/assignment/
+
+│   │   ├── dag_paths/                  # DAGPathFinder.java (Shortest/Longest Paths on DAGs)
+
+│   │   ├── graph/                      # Core Graph, Vertex, Edge, Neighbor classes (Data Structures)
+
+│   │   ├── strongly_connected_components/ # KosarajuSCC.java, TarjanSCC.java (Cycle Detection)
+
+│   │   ├── topological_sort/           # DFSTopologicalSort.java, KahnTopologicalSort.java (Order Planning)
+
+│   │   ├── Main.java                   # Main Execution Logic and Pipeline Orchestration
+
+│   │   └── Metrics.java                # Instrumentation Class for Performance Measurement
+
+├── test/                               # JUnit Test Cases for algorithmic correctness
+
+├── data/                               # Placeholder for Input Datasets (e.g., tasks.json)
+
+├── pom.xml                             # Maven Configuration File
+
+└── README.md                           # Project documentation and report
 
 
 ## ⚙️ Build and Execution Instructions
